@@ -1,0 +1,67 @@
+<div class="col-md-4">
+    <b> Search Users</b> &nbsp;&nbsp;
+
+</div>
+
+<div class="form-group col-md-4">
+    <div>
+        <select [(ngModel)]="chosenMod" (ngModelChange)="Sort()" id="selectid" class="form-control-mb-12">
+            <option value="" disabled selected>Sort By </option>
+            <option value="All">All </option>
+            <option value="Name">Name </option>
+            <option value="Favorite">Favorite </option>
+
+        </select>
+    </div><br>
+    <form [formGroup]="search" (ngSubmit)="searchuser()">
+        <div class="input-group">
+            <input type="text" class="form-control" value="{{searchname}}" placeholder="Search..." formControlName="username"> <br>
+            <button type="button" (click)="clearinputvalue()" class="btn bg-transparent"
+                style="margin-left: -40px; z-index: 100;">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <button type="submit" class="button" [disabled]="search.invalid">Serach</button>
+
+    </form>
+
+
+</div>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>avatar_url</th>
+            <th>FirstName</th>
+            <th>node_id</th>
+            <th>organizations_url</th>
+            <th>Add To Favourite</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of filterResultDataSet | filter:searchedKeyword">
+            <td>{{item.id}}</td>
+            <td><img src="{{item.avatar_url}}" /> </td>
+            <td><a data-toggle="modal" data-target="#viewprofile" href="{{item.login}}"
+                    (click)="getuser(item.login)">{{item.login}}</a>
+
+            </td>
+            <td>{{item.node_id}}</td>
+            <td><a href="{{item.organizations_url}}">{{item.organizations_url}}</a></td>
+            <td>
+                <div id="wishlist">
+                    <i (click)="removed(item)" style="color: red; cursor: pointer;" *ngIf="item.heart"
+                        class="fa fa-heart" aria-hidden="true"></i>
+                    <i (click)="onToggle(item)" *ngIf="!item.heart" style="color: black ; cursor: pointer;"
+                        class="fa fa-heart" aria-hidden="true"></i>
+                </div>
+            </td>
+
+
+        </tr>
+    </tbody>
+</table>
+
+<app-user [user]="filtereduser"></app-user>

@@ -1,0 +1,92 @@
+<div #exampleModal class="modal fade" id="viewprofile" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="exampleModalLabel"> Profile</h5> &nbsp; &nbsp;
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                    <span aria-hidden="true">&times;</span>
+
+                </button>
+
+            </div>
+
+            <div class="modal-body" style="width: 100%;">
+
+                <div class="container-fluid">
+
+                    <div class="row">
+
+                        <div class="col-sm-12" *ngIf="filtereduser">
+
+                            <!-- <p *ngIf="filtereduser">{{filtereduser.login }}</p> -->
+                            <section class="h-100 gradient-custom-2">
+                                <div class="container py-5 h-100">
+                                  <div class="row d-flex justify-content-center align-items-center h-100">
+                                    <div class="col col-lg-9 col-xl-7" style="width: 100%;">
+                                      <div class="card">
+                                        <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+                                          <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                                            <img src="{{filtereduser.avatar_url}}"
+                                              alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                                              style="width: 150px; z-index: 1">
+                                           
+                                          </div>
+                                          <div class="ms-3" style="margin-top: 130px;">
+                                            <h5>{{filtereduser.name}}</h5>
+                                            <p>{{filtereduser.location}}</p>
+                                          </div>
+                                        </div>
+                                        <div class="p-4 text-black" style="background-color: #f8f9fa;">
+                                          <div class="d-flex justify-content-end text-center py-1">
+                                            <div>
+                                              <p class="mb-1 h5">{{filtereduser.id}}</p>
+                                              <p class="small text-muted mb-0">ID</p>
+                                            </div>
+                                            <div class="px-3">
+                                              <p class="mb-1 h5">{{filtereduser.followers}}</p>
+                                              <p class="small text-muted mb-0">Followers</p>
+                                            </div>
+                                            <div>
+                                              <p class="mb-1 h5">{{filtereduser.following}}</p>
+                                              <p class="small text-muted mb-0">Following</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card-body p-4 text-black">
+                                          <div class="mb-5">
+                                            <p class="lead fw-normal mb-1">About</p>
+                                            <div class="p-4" style="background-color: #f8f9fa;">
+                                              <p class="font-italic mb-1">company :{{filtereduser.company}}</p>
+                                              <p class="font-italic mb-1">public gists:{{filtereduser.public_gists}}</p>
+                                              <p class="font-italic mb-0">public repos :{{filtereduser.public_repos}}</p>
+                                              <p class="font-italic mb-0">Profile URL :<a href="{{filtereduser.html_url}}">{{filtereduser.html_url}}</a></p>
+                                              <p class="font-italic mb-0">Bio :{{filtereduser.bio}}</p>
+                                              
+                                            </div>
+                                          </div>
+                                         
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

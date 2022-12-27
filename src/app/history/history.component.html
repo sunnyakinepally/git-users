@@ -1,0 +1,17 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">History &nbsp;&nbsp; </th>
+<th><button (click)="Clearsearchdata()">Clear All</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of historylist">
+      <!-- <th scope="row">1</th> -->
+        
+        <td (click)="send(data.name)" style="cursor: pointer">&nbsp;<a style="cursor: pointer;color: blue;" >{{data.name}} </a></td>
+      <td> <i class="fa fa-times" style="cursor: pointer;width: 40%;" (click)="onsubmit(data.name)"></i></td>
+    </tr>
+
+  </tbody>
+</table>
