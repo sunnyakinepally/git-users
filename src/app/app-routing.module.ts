@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 
 // ];
 
+// AND ALSO CHECK index.HTML FILE 
+
 const routes: Routes = [
   { path: 'git-users', component: HomeComponent },
   { path: 'git-users/search', component: SearchComponent },
