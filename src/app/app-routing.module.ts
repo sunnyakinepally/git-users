@@ -5,11 +5,11 @@ import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'git-users', component: HomeComponent },
-  { path: 'git-users/search', component: SearchComponent },
-  { path: 'git-users/History', component: HistoryComponent }
-];
+  { path: '', component: HomeComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'History', component: HistoryComponent },
 
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

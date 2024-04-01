@@ -99,7 +99,10 @@ export class SearchComponent implements OnInit {
     })
   }
   onToggle(i: any) {
-    window.location.reload()
+    // window.location.reload()
+    setTimeout(() => {
+      this.getusers()
+    },100);
     this.favorite = [];
     this.favorite = JSON.parse(localStorage.getItem('favorite') as string)
     if (localStorage.getItem('favorite')) {
