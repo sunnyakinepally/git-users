@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "user-dashboard": {
+    "git-users": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "user-dashboard:build:production"
+              "browserTarget": "git-users:build:production"
             },
             "development": {
-              "browserTarget": "user-dashboard:build:development"
+              "browserTarget": "git-users:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "user-dashboard:build"
+            "browserTarget": "git-users:build"
           }
         },
         "test": {
